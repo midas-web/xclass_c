@@ -1,0 +1,261 @@
+
+(xclass_2) ccy@ccy--pc:~/pytrochproject/xclass/XClass/scripts$ ./run.sh 0,1 Yelp
+{'dataset_name': 'Yelp', 'random_state': 42, 'lm_type': 'bbu', 'vocab_min_occurrence': 5, 'layer': 12}
+
+### Dataset statistics for raw_txt: ###
+# of documents is: 38000
+Document max length: 1077 (words)
+Document average length: 138.25063157894738 (words)
+Document length std: 126.9268619681224 (words)
+#######################################
+Cleaned 0 html links
+
+### Dataset statistics for cleaned_txt: ###
+# of documents is: 38000
+Document max length: 999 (words)
+Document average length: 134.37234210526316 (words)
+Document length std: 123.19057665725134 (words)
+#######################################
+Finish reading data
+  0%|                                                                                                                                                                                     | 0/38000 [00:00<?, ?it/s]101 102
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 38000/38000 [01:18<00:00, 482.38it/s]
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 38000/38000 [12:07<00:00, 52.27it/s]
+{'dataset_name': 'Yelp', 'random_state': 42, 'lm_type': 'bbu', 'layer': 12, 'T': 100, 'attention_mechanism': 'mixture'}
+Finish reading data
+['bad', 'good']
+ 12%|███████████████████▋                                                                                                                                                      | 4405/38000 [02:00<18:09, 30.84it/s]Empty Sentence (or sentence with no words that have enough frequency)
+ 74%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                            | 28127/38000 [13:38<04:46, 34.42it/s]Empty Sentence (or sentence with no words that have enough frequency)
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 38000/38000 [18:25<00:00, 34.38it/s]
+Finish getting document representations
+{'dataset_name': 'Yelp', 'pca': 64, 'cluster_method': 'gmm', 'lm_type': 'bbu-12', 'document_repr_type': 'mixture-100', 'random_state': 42}
+pca64.clusgmm.bbu-12.mixture-100.42
+../data/intermediate_data/Yelp
+['bad', 'good']
+Explained variance: 0.7178864932157341
+{'dataset': 'Yelp', 'stage': 'Rep', 'suffix': 'bbu-12-mixture-100'}
+--------------------------------------------------------------------------------Evaluating--------------------------------------------------------------------------------
+[[11186  7814]
+ [  604 18396]]
+F1 macro: 0.7702009007224702
+F1 micro: 0.7784736842105263
+{'dataset': 'Yelp', 'stage': 'Align', 'suffix': 'pca64.clusgmm.bbu-12.mixture-100.42'}
+--------------------------------------------------------------------------------Evaluating--------------------------------------------------------------------------------
+[[15161  3839]
+ [ 1159 17841]]
+F1 macro: 0.8678162071511373
+F1 micro: 0.8684736842105263
+{'dataset_name': 'Yelp', 'suffix': 'pca64.clusgmm.bbu-12.mixture-100.42', 'confidence_threshold': 0.5}
+--------------------------------------------------------------------------------Evaluating--------------------------------------------------------------------------------
+[[ 7950   135]
+ [  210 10705]]
+F1 macro: 0.981452136431633
+F1 micro: 0.9818421052631578
+04/21/2022 20:52:22 - WARNING - __main__ -   Process rank: -1, device: cuda, n_gpu: 1, distributed training: False, 16-bits training: False
+04/21/2022 20:52:23 - INFO - transformers.configuration_utils -   loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-cased-config.json from cache at /home/ccy/.cache/torch/transformers/b945b69218e98b3e2c95acf911789741307dec43c698d35fad11c1ae28bda352.9da767be51e1327499df13488672789394e2ca38b877837e52618a67d7002391
+04/21/2022 20:52:23 - INFO - transformers.configuration_utils -   Model config BertConfig {
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "finetuning_task": "Yelp",
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "type_vocab_size": 2,
+  "vocab_size": 28996
+}
+
+04/21/2022 20:52:24 - INFO - transformers.configuration_utils -   loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-cased-config.json from cache at /home/ccy/.cache/torch/transformers/b945b69218e98b3e2c95acf911789741307dec43c698d35fad11c1ae28bda352.9da767be51e1327499df13488672789394e2ca38b877837e52618a67d7002391
+04/21/2022 20:52:24 - INFO - transformers.configuration_utils -   Model config BertConfig {
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "type_vocab_size": 2,
+  "vocab_size": 28996
+}
+
+04/21/2022 20:52:26 - INFO - transformers.tokenization_utils_base -   loading file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-cased-vocab.txt from cache at /home/ccy/.cache/torch/transformers/5e8a2b4893d13790ed4150ca1906be5f7a03d6c4ddf62296c383f6db42814db2.e13dbb970cb325137104fb2e5f36fe865f27746c6b526f6352861b1980eb80b1
+04/21/2022 20:52:26 - INFO - transformers.modeling_utils -   loading weights file https://cdn.huggingface.co/bert-base-cased-pytorch_model.bin from cache at /home/ccy/.cache/torch/transformers/d8f11f061e407be64c4d5d7867ee61d1465263e24085cfa26abf183fdc830569.3fadbea36527ae472139fe84cddaa65454d7429f12d543d80bfc3ad70de55ac2
+04/21/2022 20:52:28 - WARNING - transformers.modeling_utils -   Some weights of the model checkpoint at bert-base-cased were not used when initializing BertForSequenceClassification: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias']
+- This IS expected if you are initializing BertForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPretraining model).
+- This IS NOT expected if you are initializing BertForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+04/21/2022 20:52:28 - WARNING - transformers.modeling_utils -   Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-cased and are newly initialized: ['classifier.weight', 'classifier.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+04/21/2022 20:52:30 - INFO - __main__ -   Training/evaluation parameters Namespace(adam_epsilon=1e-08, cache_dir=None, config_name='', data_dir='../data/datasets', device=device(type='cuda'), do_eval=True, do_lower_case=False, do_train=True, eval_all_checkpoints=False, evaluate_during_training=True, fp16=False, fp16_opt_level='O1', gradient_accumulation_steps=1, learning_rate=5e-05, local_rank=-1, logging_steps=100000, max_grad_norm=1.0, max_seq_length=100, max_steps=-1, model_name_or_path='bert-base-cased', model_type='bert', n_gpu=1, no_cuda=False, num_train_epochs=1.0, output_dir='../models/bert-base-cased_pca64.clusgmm.bbu-12.mixture-100.42.0.5', output_mode='classification', overwrite_cache=False, overwrite_output_dir=False, per_gpu_eval_batch_size=8, per_gpu_train_batch_size=8, save_steps=-1, seed=42, server_ip='', server_port='', task_name='Yelp', test_suffix='', tokenizer_name='', train_suffix='pca64.clusgmm.bbu-12.mixture-100.42.0.5', warmup_steps=0, weight_decay=0.0)
+04/21/2022 20:52:30 - INFO - __main__ -   Creating features from dataset file at ../data/datasets
+04/21/2022 20:52:56 - INFO - transformers.data.processors.glue -   *** Example ***
+04/21/2022 20:52:56 - INFO - transformers.data.processors.glue -   guid: train-0
+04/21/2022 20:52:56 - INFO - transformers.data.processors.glue -   features: InputFeatures(input_ids=[101, 4254, 2247, 146, 1125, 1126, 5516, 1106, 1243, 1207, 14337, 1105, 1125, 1106, 3074, 170, 7688, 1263, 1159, 119, 146, 1145, 1355, 1107, 1142, 1989, 1111, 1172, 1106, 8239, 170, 3137, 2463, 1114, 170, 15269, 1152, 1508, 1113, 119, 1220, 107, 4275, 107, 1122, 1111, 1714, 117, 1105, 1103, 1304, 1397, 2106, 146, 1125, 1103, 1269, 2486, 119, 146, 1270, 1106, 19073, 117, 1105, 1103, 107, 2618, 107, 1238, 112, 189, 1256, 12529, 106, 106, 106, 1573, 11010, 119, 5091, 1280, 1171, 119, 1220, 3166, 1166, 1643, 10835, 1181, 117, 1315, 119, 102, 0, 0, 0, 0, 0, 0], attention_mask=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], token_type_ids=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], label=0)
+04/21/2022 20:52:56 - INFO - transformers.data.processors.glue -   *** Example ***
+04/21/2022 20:52:56 - INFO - transformers.data.processors.glue -   guid: train-1
+04/21/2022 20:52:56 - INFO - transformers.data.processors.glue -   features: InputFeatures(input_ids=[101, 2508, 13447, 13782, 1555, 119, 18732, 20521, 2094, 106, 3458, 2094, 3932, 1177, 1263, 1103, 1519, 7926, 2093, 3368, 2897, 192, 14080, 1174, 119, 139, 1931, 2094, 119, 11722, 1166, 1643, 10835, 1181, 119, 3261, 24344, 1107, 1103, 14751, 119, 122, 5298, 1679, 2396, 4177, 119, 138, 6005, 2386, 1120, 1155, 4692, 119, 6632, 2618, 119, 102, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], attention_mask=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], token_type_ids=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], label=0)
+04/21/2022 20:52:56 - INFO - transformers.data.processors.glue -   *** Example ***
+04/21/2022 20:52:56 - INFO - transformers.data.processors.glue -   guid: train-2
+04/21/2022 20:52:56 - INFO - transformers.data.processors.glue -   features: InputFeatures(input_ids=[101, 146, 1215, 1106, 1567, 141, 139, 1165, 1122, 1148, 1533, 1107, 1103, 4434, 11949, 117, 1133, 1122, 1144, 2065, 1205, 4665, 1166, 1103, 1201, 119, 1109, 1638, 1132, 1136, 1112, 4106, 1105, 1202, 1136, 1660, 1128, 1112, 1242, 10068, 1105, 1103, 12843, 1138, 4690, 17780, 1107, 3068, 119, 1135, 2274, 170, 2006, 26913, 1104, 170, 1974, 1104, 10068, 1111, 1128, 1106, 1256, 1243, 170, 16372, 106, 1109, 6814, 1110, 3008, 1133, 1122, 1215, 1106, 1129, 1177, 1277, 1618, 1114, 1103, 4106, 3965, 1204, 1638, 1105, 7188, 2114, 1104, 1234, 106, 1986, 117, 1122, 1110, 1576, 1205, 1105, 1242, 102], attention_mask=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], token_type_ids=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], label=0)
+04/21/2022 20:52:56 - INFO - transformers.data.processors.glue -   *** Example ***
+04/21/2022 20:52:56 - INFO - transformers.data.processors.glue -   guid: train-3
+04/21/2022 20:52:56 - INFO - transformers.data.processors.glue -   features: InputFeatures(input_ids=[101, 2409, 1251, 9752, 13396, 117, 1122, 1144, 170, 3505, 3254, 13268, 17287, 117, 1105, 170, 1415, 4557, 1104, 2146, 119, 1109, 2546, 1110, 1304, 4931, 1105, 14739, 119, 1220, 4482, 170, 11858, 4557, 117, 1105, 1103, 7352, 1132, 2785, 9483, 119, 15580, 1122, 112, 188, 1662, 1111, 1172, 1106, 4845, 1114, 9786, 119, 1438, 1290, 1155, 1103, 1353, 4130, 27714, 1116, 1132, 2065, 117, 1122, 112, 188, 3505, 1106, 2647, 1154, 1141, 1451, 1517, 1107, 170, 1229, 119, 102, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], attention_mask=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], token_type_ids=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], label=1)
+04/21/2022 20:52:56 - INFO - transformers.data.processors.glue -   *** Example ***
+04/21/2022 20:52:56 - INFO - transformers.data.processors.glue -   guid: train-4
+04/21/2022 20:52:56 - INFO - transformers.data.processors.glue -   features: InputFeatures(input_ids=[101, 12118, 2155, 1144, 1151, 1213, 1111, 1518, 117, 146, 1631, 1176, 1142, 4382, 4129, 4709, 1107, 5587, 1107, 1103, 2908, 112, 188, 119, 23686, 1103, 1260, 19248, 1656, 1253, 1912, 1104, 2736, 17008, 1106, 1143, 1256, 1463, 1157, 3505, 1114, 23996, 12960, 1105, 5490, 5003, 119, 1409, 1128, 3983, 112, 189, 1452, 1105, 1119, 3055, 146, 2802, 1128, 1106, 1435, 1171, 1105, 1138, 170, 7696, 1303, 1254, 1272, 12051, 1103, 2094, 1110, 1541, 2385, 1363, 106, 1220, 1138, 1103, 1436, 9323, 19359, 10561, 1518, 106, 146, 1567, 1115, 12488, 1177, 1277, 146, 1328, 2675, 1106, 2647, 1103, 1588, 102], attention_mask=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], token_type_ids=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], label=1)
+04/21/2022 20:52:56 - INFO - __main__ -   Saving features into cached file ../data/datasets/Yelp_pca64.clusgmm.bbu-12.mixture-100.42.0.5/cached_train_bert-base-cased_100
+04/21/2022 20:52:59 - INFO - __main__ -   ***** Running training *****
+04/21/2022 20:52:59 - INFO - __main__ -     Num examples = 19000
+04/21/2022 20:52:59 - INFO - __main__ -     Num Epochs = 1
+04/21/2022 20:52:59 - INFO - __main__ -     Instantaneous batch size per GPU = 8
+04/21/2022 20:52:59 - INFO - __main__ -     Total train batch size (w. parallel, distributed & accumulation) = 8
+04/21/2022 20:52:59 - INFO - __main__ -     Gradient Accumulation steps = 1
+04/21/2022 20:52:59 - INFO - __main__ -     Total optimization steps = 2375
+Iteration: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2375/2375 [07:16<00:00,  5.44it/s]
+Epoch: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [07:16<00:00, 436.70s/it]
+04/21/2022 21:00:16 - INFO - __main__ -    global_step = 2375, average loss = 0.14118657002794116
+04/21/2022 21:00:16 - INFO - __main__ -   Saving model checkpoint to ../models/bert-base-cased_pca64.clusgmm.bbu-12.mixture-100.42.0.5
+04/21/2022 21:00:16 - INFO - transformers.configuration_utils -   Configuration saved in ../models/bert-base-cased_pca64.clusgmm.bbu-12.mixture-100.42.0.5/config.json
+04/21/2022 21:00:16 - INFO - transformers.modeling_utils -   Model weights saved in ../models/bert-base-cased_pca64.clusgmm.bbu-12.mixture-100.42.0.5/pytorch_model.bin
+04/21/2022 21:00:16 - INFO - transformers.configuration_utils -   loading configuration file ../models/bert-base-cased_pca64.clusgmm.bbu-12.mixture-100.42.0.5/config.json
+04/21/2022 21:00:16 - INFO - transformers.configuration_utils -   Model config BertConfig {
+  "architectures": [
+    "BertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "finetuning_task": "Yelp",
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "type_vocab_size": 2,
+  "vocab_size": 28996
+}
+
+04/21/2022 21:00:16 - INFO - transformers.modeling_utils -   loading weights file ../models/bert-base-cased_pca64.clusgmm.bbu-12.mixture-100.42.0.5/pytorch_model.bin
+04/21/2022 21:00:18 - INFO - transformers.modeling_utils -   All model checkpoint weights were used when initializing BertForSequenceClassification.
+
+04/21/2022 21:00:18 - INFO - transformers.modeling_utils -   All the weights of BertForSequenceClassification were initialized from the model checkpoint at ../models/bert-base-cased_pca64.clusgmm.bbu-12.mixture-100.42.0.5.
+If your task is similar to the task the model of the ckeckpoint was trained on, you can already use BertForSequenceClassification for predictions without further training.
+04/21/2022 21:00:18 - INFO - transformers.configuration_utils -   loading configuration file ../models/bert-base-cased_pca64.clusgmm.bbu-12.mixture-100.42.0.5/config.json
+04/21/2022 21:00:18 - INFO - transformers.configuration_utils -   Model config BertConfig {
+  "architectures": [
+    "BertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "finetuning_task": "Yelp",
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "type_vocab_size": 2,
+  "vocab_size": 28996
+}
+
+04/21/2022 21:00:18 - INFO - transformers.tokenization_utils_base -   Model name '../models/bert-base-cased_pca64.clusgmm.bbu-12.mixture-100.42.0.5' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc, bert-base-german-dbmdz-cased, bert-base-german-dbmdz-uncased, TurkuNLP/bert-base-finnish-cased-v1, TurkuNLP/bert-base-finnish-uncased-v1, wietsedv/bert-base-dutch-cased). Assuming '../models/bert-base-cased_pca64.clusgmm.bbu-12.mixture-100.42.0.5' is a path, a model identifier, or url to a directory containing tokenizer files.
+04/21/2022 21:00:18 - INFO - transformers.tokenization_utils_base -   Didn't find file ../models/bert-base-cased_pca64.clusgmm.bbu-12.mixture-100.42.0.5/added_tokens.json. We won't load it.
+04/21/2022 21:00:18 - INFO - transformers.tokenization_utils_base -   Didn't find file ../models/bert-base-cased_pca64.clusgmm.bbu-12.mixture-100.42.0.5/tokenizer.json. We won't load it.
+04/21/2022 21:00:18 - INFO - transformers.tokenization_utils_base -   loading file ../models/bert-base-cased_pca64.clusgmm.bbu-12.mixture-100.42.0.5/vocab.txt
+04/21/2022 21:00:18 - INFO - transformers.tokenization_utils_base -   loading file None
+04/21/2022 21:00:18 - INFO - transformers.tokenization_utils_base -   loading file ../models/bert-base-cased_pca64.clusgmm.bbu-12.mixture-100.42.0.5/special_tokens_map.json
+04/21/2022 21:00:18 - INFO - transformers.tokenization_utils_base -   loading file ../models/bert-base-cased_pca64.clusgmm.bbu-12.mixture-100.42.0.5/tokenizer_config.json
+04/21/2022 21:00:18 - INFO - transformers.tokenization_utils_base -   loading file None
+04/21/2022 21:00:18 - INFO - __main__ -   Evaluate the following checkpoints: ['../models/bert-base-cased_pca64.clusgmm.bbu-12.mixture-100.42.0.5']
+04/21/2022 21:00:18 - INFO - transformers.configuration_utils -   loading configuration file ../models/bert-base-cased_pca64.clusgmm.bbu-12.mixture-100.42.0.5/config.json
+04/21/2022 21:00:18 - INFO - transformers.configuration_utils -   Model config BertConfig {
+  "architectures": [
+    "BertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "finetuning_task": "Yelp",
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "type_vocab_size": 2,
+  "vocab_size": 28996
+}
+
+04/21/2022 21:00:18 - INFO - transformers.modeling_utils -   loading weights file ../models/bert-base-cased_pca64.clusgmm.bbu-12.mixture-100.42.0.5/pytorch_model.bin
+04/21/2022 21:00:20 - INFO - transformers.modeling_utils -   All model checkpoint weights were used when initializing BertForSequenceClassification.
+
+04/21/2022 21:00:20 - INFO - transformers.modeling_utils -   All the weights of BertForSequenceClassification were initialized from the model checkpoint at ../models/bert-base-cased_pca64.clusgmm.bbu-12.mixture-100.42.0.5.
+If your task is similar to the task the model of the ckeckpoint was trained on, you can already use BertForSequenceClassification for predictions without further training.
+04/21/2022 21:00:20 - INFO - __main__ -   Creating features from dataset file at ../data/datasets
+04/21/2022 21:01:18 - INFO - transformers.data.processors.glue -   *** Example ***
+04/21/2022 21:01:18 - INFO - transformers.data.processors.glue -   guid: test-0
+04/21/2022 21:01:18 - INFO - transformers.data.processors.glue -   features: InputFeatures(input_ids=[101, 16752, 26852, 1183, 1106, 1168, 3761, 117, 146, 1138, 6756, 11344, 1164, 1103, 1555, 1137, 1103, 7352, 119, 146, 1138, 1151, 2033, 15269, 1555, 1303, 1111, 1103, 1763, 126, 1201, 1208, 117, 1105, 3402, 1106, 1139, 2541, 1114, 2844, 1176, 153, 8043, 4760, 117, 1292, 3713, 1132, 4531, 1105, 1221, 1184, 1152, 112, 1231, 1833, 119, 2907, 117, 1142, 1110, 1141, 1282, 1115, 146, 1202, 1136, 1631, 1176, 146, 1821, 1217, 1678, 4316, 1104, 117, 1198, 1272, 1104, 1139, 5772, 119, 2189, 12365, 11556, 1138, 1151, 14140, 1111, 2364, 4404, 1113, 1139, 21326, 1104, 3079, 117, 1105, 1138, 102], attention_mask=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], token_type_ids=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], label=1)
+04/21/2022 21:01:18 - INFO - transformers.data.processors.glue -   *** Example ***
+04/21/2022 21:01:18 - INFO - transformers.data.processors.glue -   guid: test-1
+04/21/2022 21:01:18 - INFO - transformers.data.processors.glue -   features: InputFeatures(input_ids=[101, 4254, 2247, 146, 1125, 1126, 5516, 1106, 1243, 1207, 14337, 1105, 1125, 1106, 3074, 170, 7688, 1263, 1159, 119, 146, 1145, 1355, 1107, 1142, 1989, 1111, 1172, 1106, 8239, 170, 3137, 2463, 1114, 170, 15269, 1152, 1508, 1113, 119, 1220, 165, 107, 4275, 165, 107, 1122, 1111, 1714, 117, 1105, 1103, 1304, 1397, 2106, 146, 1125, 1103, 1269, 2486, 119, 146, 1270, 1106, 19073, 117, 1105, 1103, 165, 107, 2618, 165, 107, 1238, 112, 189, 1256, 12529, 106, 106, 106, 1573, 11010, 119, 5091, 1280, 1171, 119, 1220, 3166, 1166, 1643, 10835, 1181, 117, 1315, 119, 102, 0, 0], attention_mask=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0], token_type_ids=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], label=0)
+04/21/2022 21:01:18 - INFO - transformers.data.processors.glue -   *** Example ***
+04/21/2022 21:01:18 - INFO - transformers.data.processors.glue -   guid: test-2
+04/21/2022 21:01:18 - INFO - transformers.data.processors.glue -   features: InputFeatures(input_ids=[101, 27755, 2546, 117, 1269, 2851, 7925, 8770, 4652, 1128, 1243, 5456, 1950, 119, 5875, 1103, 2442, 1169, 1243, 1263, 119, 102, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], attention_mask=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], token_type_ids=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], label=1)
+04/21/2022 21:01:18 - INFO - transformers.data.processors.glue -   *** Example ***
+04/21/2022 21:01:18 - INFO - transformers.data.processors.glue -   guid: test-3
+04/21/2022 21:01:18 - INFO - transformers.data.processors.glue -   features: InputFeatures(input_ids=[101, 1109, 2094, 1110, 1363, 119, 7595, 1103, 1555, 1110, 1304, 1855, 1137, 5529, 119, 1109, 1514, 2486, 3093, 1106, 1129, 1114, 1103, 3119, 117, 1103, 17989, 1116, 1105, 15098, 1279, 1132, 1510, 1304, 170, 23043, 8032, 9265, 1111, 1103, 1263, 24344, 1105, 1122, 112, 188, 2785, 5119, 1115, 1199, 1104, 1172, 3644, 1103, 7072, 1170, 1781, 1103, 3288, 1546, 1106, 3644, 4510, 11344, 119, 102, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], attention_mask=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], token_type_ids=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], label=0)
+04/21/2022 21:01:18 - INFO - transformers.data.processors.glue -   *** Example ***
+04/21/2022 21:01:18 - INFO - transformers.data.processors.glue -   guid: test-4
+04/21/2022 21:01:18 - INFO - transformers.data.processors.glue -   features: InputFeatures(input_ids=[101, 2431, 1165, 1195, 1238, 112, 189, 1138, 170, 1610, 25647, 1673, 112, 188, 5524, 1880, 1108, 3869, 1103, 3592, 3868, 1106, 1103, 4434, 11949, 119, 146, 1579, 1525, 1380, 113, 1932, 146, 1525, 124, 118, 125, 1614, 1105, 4511, 1164, 109, 2539, 114, 1105, 1618, 1253, 117, 146, 1821, 1579, 1253, 3351, 1103, 3459, 1105, 5743, 124, 1808, 1224, 119, 146, 1912, 1104, 8095, 1142, 1110, 1103, 1436, 6001, 1107, 5610, 132, 1122, 112, 188, 1277, 1618, 1190, 1103, 4400, 2853, 4822, 117, 1618, 1190, 5137, 112, 188, 1105, 157, 4538, 3405, 1775, 1105, 1618, 1190, 1103, 17784, 102], attention_mask=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], token_type_ids=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], label=1)
+04/21/2022 21:01:18 - INFO - __main__ -   Saving features into cached file ../data/datasets/Yelp/cached_test_bert-base-cased_100
+04/21/2022 21:01:23 - INFO - __main__ -   ***** Running evaluation  *****
+04/21/2022 21:01:23 - INFO - __main__ -     Num examples = 38000
+04/21/2022 21:01:23 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4750/4750 [04:05<00:00, 19.37it/s]
+04/21/2022 21:05:28 - INFO - __main__ -   ***** Eval results  *****
+04/21/2022 21:05:28 - INFO - __main__ -     f1_macro = 0.8638597475018887
+04/21/2022 21:05:28 - INFO - __main__ -     f1_micro = 0.864421052631579
+{'dataset': 'Yelp', 'stage': 'Rep', 'suffix': 'bbu-12-mixture-100'}
+--------------------------------------------------------------------------------Evaluating--------------------------------------------------------------------------------
+[[11186  7814]
+ [  604 18396]]
+F1 macro: 0.7702009007224702
+F1 micro: 0.7784736842105263
+{'dataset': 'Yelp', 'stage': 'Align', 'suffix': 'pca64.clusgmm.bbu-12.mixture-100.42'}
+--------------------------------------------------------------------------------Evaluating--------------------------------------------------------------------------------
+[[15161  3839]
+ [ 1159 17841]]
+F1 macro: 0.8678162071511373
+F1 micro: 0.8684736842105263
+
